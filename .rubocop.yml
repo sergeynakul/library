@@ -9,3 +9,6 @@ Style/MixinUsage:
 
 Metrics/LineLength:
   Max: 155
+
+Metrics/BlockLength:
+  Max: 50

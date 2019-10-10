@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_191_010_180_443) do
+ActiveRecord::Schema.define(version: 20_191_010_191_627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -39,4 +39,33 @@ ActiveRecord::Schema.define(version: 20_191_010_180_443) do
     t.index ['email'], name: 'index_admin_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_admin_users_on_reset_password_token', unique: true
   end
+
+  create_table 'authors', force: :cascade do |t|
+    t.string 'name', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  create_table 'authors_books', id: false, force: :cascade do |t|
+    t.bigint 'author_id', null: false
+    t.bigint 'book_id', null: false
+    t.index %w[author_id book_id], name: 'index_authors_books_on_author_id_and_book_id'
+  end
+
+  create_table 'books', force: :cascade do |t|
+    t.string 'title', null: false
+    t.string 'picture'
+    t.bigint 'group_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['group_id'], name: 'index_books_on_group_id'
+  end
+
+  create_table 'groups', force: :cascade do |t|
+    t.string 'name', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+  end
+
+  add_foreign_key 'books', 'groups'
 end
