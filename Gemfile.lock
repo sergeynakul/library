@@ -62,6 +62,8 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
+    autoprefixer-rails (9.6.0)
+      execjs
     aws-eventstream (1.0.3)
     aws-partitions (1.196.0)
     aws-sdk-core (3.62.0)
@@ -86,6 +88,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.29.0)
@@ -181,6 +187,7 @@ GEM
     pg (1.1.4)
     polyamorous (2.3.0)
       activerecord (>= 5.0)
+    popper_js (1.14.5)
     public_suffix (4.0.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -303,12 +310,14 @@ DEPENDENCIES
   activeadmin
   aws-sdk-s3
   bootsnap (>= 1.1.0)
+  bootstrap (~> 4.3.1)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
+  jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)

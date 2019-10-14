@@ -64,5 +64,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Project specific gems
 gem 'activeadmin'
 gem 'aws-sdk-s3', require: false
+gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
+gem 'jquery-rails'
 gem 'rubocop', require: false
