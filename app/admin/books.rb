@@ -14,4 +14,15 @@ ActiveAdmin.register Book do
     book.authors.delete(author)
     redirect_to admin_book_path(book), notice: 'Author deleted from book!'
   end
+
+  sidebar 'Add author in this Book', only: :show do
+    render 'add_author', book: book
+  end
+
+  member_action :add_author, method: :put do
+    book = Book.find(params[:id])
+    author = Author.find(params[:author_id])
+    book.authors << author
+    redirect_to admin_book_path(book), notice: 'Author added in book!'
+  end
 end

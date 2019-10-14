@@ -15,16 +15,13 @@ ActiveAdmin.register Group do
     redirect_to admin_group_path(group), notice: 'Book deleted from group!'
   end
 
-  sidebar 'Add books in this Group', only: :show do
-    form action: :add_book, method: :post do |f|
-      f.select :book_id, Book.all.map { |book| [book.title, book.id] }, prompt: 'Select'
-      f.input :submit, type: :submit
-    end
+  sidebar 'Add book in this Group', only: :show do
+    render 'add_book', group: group
   end
 
-  member_action :add_book, method: :post do
+  member_action :add_book, method: :put do
+    group = Group.find(params[:id])
     book = Book.find(params[:book_id])
-    group = book.group
     group.books << book
     redirect_to admin_group_path(group), notice: 'Book added in group!'
   end
