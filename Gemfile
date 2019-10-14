@@ -63,5 +63,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Project specific gems
 gem 'activeadmin'
+gem 'aws-sdk-s3', require: false
 gem 'devise'
 gem 'rubocop', require: false
