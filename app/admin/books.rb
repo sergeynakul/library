@@ -25,4 +25,15 @@ ActiveAdmin.register Book do
     book.authors << author
     redirect_to admin_book_path(book), notice: 'Author added in book!'
   end
+
+  form partial: 'form'
+
+  show do
+    attributes_table do
+      row :title
+      row :picture do |ad|
+        image_tag url_for(ad.picture)
+      end
+    end
+  end
 end
