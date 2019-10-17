@@ -1,5 +1,5 @@
 <%= form_with url: add_book_admin_group_path(group), local: true, method: :put do |form| %>
-  <%= form.label 'Title' %>
+  <%= form.label :book_id, 'Title' %>
   <%= form.select(:book_id, AdminHelper::sorted_available_books(group), prompt: 'Select') %>
   <%= form.submit 'Add book' %>
 <% end %>

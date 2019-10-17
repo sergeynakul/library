@@ -1,13 +1,7 @@
 <% @groups.each do |group| %>
-  <h1 class="text-center my-4"><%= group.name %></h1>
-  <div class="card-group">
-    <% group.books.each do |book| %>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><%= book.title %></h5>
-        </div>
-        <%= image_tag book.picture, class: "card-img-top" %>
-      </div>
-    <% end %>
-  </div>
+  <h1><%= group.name %></h1>
+  <% group.books.each do |book| %>
+    <h4><%= book.title %></h4>
+    <%= image_tag book.picture %>
+  <% end %>
 <% end %>

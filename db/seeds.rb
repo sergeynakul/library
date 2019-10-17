@@ -20,7 +20,7 @@ girls = Book.create!(title: 'Girls of Paper and Fire', group: fantasy_book)
 girls.picture.attach(io: File.open(Rails.root.join('db/seeds/pictures/girls.jpg')), filename: 'girls.jpg')
 meeting = Book.create!(title: 'Get the Meeting!', group: business_book)
 meeting.picture.attach(io: File.open(Rails.root.join('db/seeds/pictures/meeting.jpg')), filename: 'meeting.jpg')
-indistractable = Book.create!(title: 'Indistractable: How to Control Your Attention and Choose Your Life', group: business_book)
+indistractable = Book.create!(title: 'Indistractable', group: business_book)
 indistractable.picture.attach(io: File.open(Rails.root.join('db/seeds/pictures/indistractable.jpg')), filename: 'indistractable.jpg')
 
 awakening.authors << Author.create!(name: 'Lindsey Cowherd')

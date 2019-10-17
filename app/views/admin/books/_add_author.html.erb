@@ -1,5 +1,5 @@
 <%= form_with url: add_author_admin_book_path(book), local: true, method: :put do |form| %>
-  <%= form.label 'Name' %>
+  <%= form.label :author_id, 'Name' %>
   <%= form.select(:author_id, AdminHelper::sorted_available_authors(book), prompt: 'Select') %>
   <%= form.submit 'Add author' %>
 <% end %>
