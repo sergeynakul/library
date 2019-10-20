@@ -32,7 +32,7 @@ ActiveAdmin.register Book do
     attributes_table do
       row :title
       row :picture do |ad|
-        image_tag url_for(ad.picture)
+        image_tag url_for(ad.picture) if ad.picture.attached?
       end
     end
   end

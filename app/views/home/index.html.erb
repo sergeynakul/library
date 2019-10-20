@@ -2,6 +2,6 @@
   <h1><%= group.name %></h1>
   <% group.books.each do |book| %>
     <h4><%= book.title %></h4>
-    <%= image_tag book.picture %>
+    <%= image_tag book.picture if book.picture.attached? %>
   <% end %>
 <% end %>
