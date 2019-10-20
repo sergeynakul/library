@@ -5,4 +5,6 @@ class Book < ApplicationRecord
   validates :title, :picture, presence: true
 
   has_one_attached :picture
+
+  scope :can_add_in, ->(group) { where.not(title: group.books.pluck(:title)) }
 end
